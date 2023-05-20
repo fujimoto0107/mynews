@@ -1,17 +1,13 @@
-{{-- layouts/admin.profile.phpを読み込む --}}
 @extends('layouts.profile')
 
-{{-- admin.blade.phpの@yield('title')に'クリエイト新規作成'を埋め込む --}}
 @section('title', 'プロフィールの新規作成')
 
-{{-- admin.blade.phpの@yield('content')に以下のタグを埋め込む --}}
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>プロフィールの新規作成</h2>
 
-                {{-- エラーメッセージの表示 --}}
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -22,7 +18,6 @@
                     </div>
                 @endif
 
-                {{-- プロフィール作成フォーム --}}
                 <form action="{{ route('admin.profile.create') }}" method="POST">
                     @csrf
 

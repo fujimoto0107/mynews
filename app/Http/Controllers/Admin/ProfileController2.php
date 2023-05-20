@@ -15,6 +15,7 @@ class ProfileController extends Controller
 
     public function create(Request $request)
     {
+       
         $user = new User();
         $user->name = $request->input('name');
         $user->gender = $request->input('gender');
@@ -22,7 +23,7 @@ class ProfileController extends Controller
         $user->introduction = $request->input('introduction');
         $user->save();
 
-        return redirect()->route('admin.profile.create');
+        return redirect('admin/profile/create');
     }
 
     public function edit()
@@ -32,6 +33,7 @@ class ProfileController extends Controller
 
     public function update()
     {
-        return redirect()->route('admin.profile.edit');
+        return redirect('admin/profile/edit');
     }
+    
 }
