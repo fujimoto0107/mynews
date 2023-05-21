@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+  <title>お問合せフォーム</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>お問合せフォーム</h1>
+    <div class="form-container">
+      <!-- PHP使うかどうかは未定　電話番号に変更する可能性あり　-->
+      <form action="send_email.php" method="post">
+        <label for="name">お名前:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="address">ご住所:</label>
+        <input type="text" id="address" name="address" required><br>
+
+        <label for="contact">連絡先番号:</label>
+        <input type="text" id="contact" name="contact" required><br>
+
+        <label for="date">式のご予定日:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <input type="submit" value="メールを送信する">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
