@@ -18,8 +18,12 @@ h1 {
 }
 
 .image-container {
-  margin-top: 10px;
+  margin-top: 20px;
 }
+.image-container img {
+  max-width: 100%;
+}
+
 
 .contact {
   margin-top: 50px;
