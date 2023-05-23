@@ -9,7 +9,6 @@
   <div class="container">
     <h1>お問合せフォーム</h1>
     <div class="form-container">
-      <!-- PHP使うかどうかは未定　電話番号に変更する可能性あり　-->
       <form action="send_email.php" method="post">
         <label for="name">お名前:</label>
         <input type="text" id="name" name="name" required><br>
@@ -24,7 +23,7 @@
         <input type="text" id="date" name="date" placeholder="" required><br>
 
         <input type="submit" value="メールを送信する">
-      </form>
+      <form action="/kekkonshiki/send_email.php" method="post">
     </div>
   </div>
 </body>
