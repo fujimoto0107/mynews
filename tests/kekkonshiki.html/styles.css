@@ -1,49 +1,48 @@
 body {
-  background-color: black;
-  color: white;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
+h1, h2 {
+    margin-bottom: 20px;
 }
 
-h1 {
-  font-size: 30px;
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.image-container {
-  margin-top: 20px;
-}
-.image-container img {
-  max-width: 100%;
-}
-
-
-.contact {
-  margin-top: 50px;
-}
-
-.contact a {
-  color: white;
-}
-
-.form-container {
-  background-color: navy;
-  padding: 20px;
-  margin-top: 30px;
-}
-
-label {
-  display: block;
-  margin-top: 10px;
+input[type="text"],
+textarea {
+    width: 300px;
+    padding: 5px;
+    margin-bottom: 10px;
 }
 
 input[type="submit"] {
-  margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.centered-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 33%;
 }
