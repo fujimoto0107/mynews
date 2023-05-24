@@ -113,6 +113,6 @@ class NewsController extends Controller
         // 削除する
         $news->delete();
 
-        return redirect('admin/news/');
+        return redirect('admin/news');
     }
 }
