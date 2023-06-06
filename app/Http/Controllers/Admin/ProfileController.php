@@ -2,36 +2,37 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Http\Controllers\Controller;
+
+use App\Profile;
+
 
 class ProfileController extends Controller
 {
-    public function add()
-    {
-        return view('admin.profile.create');
-    }
+  public function edit()
+  {
+      return view('admin.profile.edit');
+  }
 
-    public function create(Request $request)
-    {
-        $user = new User();
-        $user->name = $request->input('name');
-        $user->gender = $request->input('gender');
-        $user->hobby = $request->input('hobby');
-        $user->introduction = $request->input('introduction');
-        $user->save();
+  public function update(Request $request)
+  {
+      // 以下を追記
 
-        return redirect()->route('admin.profile.create');
-    }
+      // Varidationを行う
+      $this->validate($request, Profile::$rules);
 
-    public function edit()
-    {
-        return view('admin.profile.edit');
-    }
+      // 既存のプロフィールデータを削除
+      Profile::truncate();
 
-    public function update()
-    {
-        return redirect()->route('admin.profile.edit');
-    }
+      $profile = new Profile;
+      $form = $request->all();
+
+      unset($form['_token']);
+
+      $profile->fill($form);
+      $profile->save();
+
+      return redirect('admin/profile/edit');
+  }
 }
